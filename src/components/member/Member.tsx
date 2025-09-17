@@ -1,6 +1,7 @@
-import { FC } from "react";
-import { Avatar, Box, Typography } from "@mui/material";
-import Link from "next/link";
+import {FC} from "react";
+import {Avatar, Box, Typography} from "@mui/material";
+import {Link} from "react-router";
+
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 interface MemberProps {
@@ -28,7 +29,7 @@ export const MemberItem: FC<MemberProps> = ({
         gap: 2,
       }}
       component={Link}
-      href={path}
+      to={path}
     >
       <Avatar sx={{ width: 50, height: 50 }} src={profilePicture} alt={name} />
       <Box

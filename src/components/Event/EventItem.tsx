@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { Avatar, Box, Chip, Typography } from "@mui/material";
+import {FC} from "react";
+import {Avatar, Box, Chip, Typography} from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PersonIcon from "@mui/icons-material/Person";
 import InfoIcon from "@mui/icons-material/Info";
-import Link from "next/link";
-import { hideOnMobileStyle } from "@/style/theme";
+import {Link} from "react-router";
+import {hideOnMobileStyle} from "../../style/theme.ts";
 
 interface EventItemProps {
   id: string;
@@ -27,7 +27,7 @@ export const EventItem: FC<EventItemProps> = ({
   return (
     <Box
       component={Link}
-      href={`/event/${id}`}
+      to={`/event/${id}`}
       sx={{
         display: "flex",
         flexDirection: "row",

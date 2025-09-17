@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Avatar, Box, Typography } from "@mui/material";
-import Link from "next/link";
+import {FC} from "react";
+import {Avatar, Box, Typography} from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import {Link} from "react-router";
 
 interface JobItemProps {
   logo: string;
@@ -25,7 +25,7 @@ export const JobItem: FC<JobItemProps> = ({
         justifyContent: "space-between",
       }}
       component={Link}
-      href={path}
+      to={path}
     >
       <Box
         sx={{

@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { Avatar, Box, Card, Typography } from "@mui/material";
-import Link from "next/link";
+import {FC} from "react";
+import {Avatar, Box, Card, Typography} from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Divider from "@mui/material/Divider";
+import {Link} from "react-router";
 
 interface Props {
   id: string;
@@ -22,13 +22,13 @@ export const JobCard: FC<Props> = ({ id, logo, positionName, companyName }) => {
         gap: 1,
       }}
       component={Link}
-      href={`/jobs/${id}`}
+      to={`/jobs/${id}`}
     >
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <Avatar src={logo} />
         <Box>
           <Typography>{positionName}</Typography>
-          <Typography component={Link} href={`/company/${id}`}>
+          <Typography component={Link} to={`/company/${id}`}>
             {companyName}
           </Typography>
         </Box>
@@ -36,7 +36,7 @@ export const JobCard: FC<Props> = ({ id, logo, positionName, companyName }) => {
       <Divider />
       <Box
         component={Link}
-        href={id}
+        to={id}
         sx={{
           display: "flex",
           justifyContent: "center",

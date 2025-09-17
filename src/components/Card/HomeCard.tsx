@@ -1,10 +1,11 @@
-import { FC, ReactNode } from "react";
-import { Badge, Box, Card, SvgIconTypeMap } from "@mui/material";
-import Link from "next/link";
+import {FC, ReactNode} from "react";
+import {Badge, Box, Card, SvgIconTypeMap} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import {OverridableComponent} from "@mui/material/OverridableComponent";
+import {Link} from "react-router";
+
 
 interface Props {
   label: string;
@@ -46,7 +47,7 @@ export const HomeCard: FC<Props> = ({ label, Icon, path, children }) => {
       <Divider sx={{ margin: "4px 0" }} />
       <Box
         component={Link}
-        href={path}
+        to={path}
         sx={{
           display: "flex",
           justifyContent: "center",

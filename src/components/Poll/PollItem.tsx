@@ -1,8 +1,9 @@
-import { Box, Chip, Typography } from "@mui/material";
+import {Box, Chip, Typography} from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import HowToVoteIcon from "@mui/icons-material/HowToVote";
-import { FC } from "react";
-import Link from "next/link";
+import {FC} from "react";
+import {Link} from "react-router";
+
 
 interface Props {
   id: string;
@@ -20,7 +21,7 @@ export const PollItem: FC<Props> = ({ question, totalVotes, id }) => {
         justifyContent: "space-between",
       }}
       component={Link}
-      href={`/poll/${id}`}
+      to={`/poll/${id}`}
     >
       <Box
         sx={{

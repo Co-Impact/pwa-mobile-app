@@ -1,13 +1,13 @@
-import { Avatar, Box, Card, Chip, Container, Typography } from "@mui/material";
-import Link from "next/link";
+import {Avatar, Box, Card, Chip, Container, Typography} from "@mui/material";
+import {Link} from "react-router";
 import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  timelineItemClasses,
-  TimelineSeparator,
+    Timeline,
+    TimelineConnector,
+    TimelineContent,
+    TimelineDot,
+    TimelineItem,
+    timelineItemClasses,
+    TimelineSeparator,
 } from "@mui/lab";
 import EventIcon from "@mui/icons-material/Event";
 import Divider from "@mui/material/Divider";
@@ -113,7 +113,7 @@ const discussionPage = () => {
                     justifyContent: "space-between",
                   }}
                   component={Link}
-                  href={`/discussion/${id}`}
+                  to={`/discussion/${id}`}
                 >
                   <Box>
                     <Typography>{question}</Typography>
