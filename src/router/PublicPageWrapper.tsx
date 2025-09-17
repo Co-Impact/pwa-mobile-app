@@ -1,12 +1,13 @@
 import { Navigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
-import PublicLayout from '../components/layout/PublicLayout';
+import PublicLayout from "../layout/PublicLayout.tsx";
+import {FC, ReactNode} from "react";
 
 interface PublicPageWrapperProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const PublicPageWrapper: React.FC<PublicPageWrapperProps> = ({ children }) => {
+const PublicPageWrapper: FC<PublicPageWrapperProps> = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
   if (isAuthenticated) {

@@ -1,17 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import {
-  CtfPage,
-  CyberWarfarePage,
-  HomePage,
-  LoginPage,
-  PrivacyPolicyPage,
-  ProfilePage,
-  TermsOfUsePage,
-  UserPage,
+    DiscussionPage,
+    EventPage,
+    HomePage, JobsPage,
+    LoginPage, PollPage,
+    ProfilePage, SignupPage,
 } from "./pages";
 import RootRoute from "./RootRoute";
 import RouteWrapper from "./RouteWrapper";
-import SignUpPage from "../pages/signup/SignUpPage";
 
 export const router = createBrowserRouter([
   {
@@ -27,18 +23,18 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "user",
+        path: "event",
         element: (
           <RouteWrapper isProtected={true}>
-            <UserPage />
+            <EventPage />
           </RouteWrapper>
         ),
       },
       {
-        path: "ctf",
+        path: "discussion",
         element: (
           <RouteWrapper isProtected={true}>
-            <CtfPage />
+            <DiscussionPage />
           </RouteWrapper>
         ),
       },
@@ -51,10 +47,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "cyberwarfare",
+        path: "jobs",
         element: (
           <RouteWrapper isProtected={true}>
-            <CyberWarfarePage />
+            <JobsPage />
           </RouteWrapper>
         ),
       },
@@ -70,23 +66,15 @@ export const router = createBrowserRouter([
         path: "/signup",
         element: (
           <RouteWrapper>
-            <SignUpPage />
+            <SignupPage />
           </RouteWrapper>
         ),
       },
       {
-        path: "/privacy-policy",
+        path: "/poll",
         element: (
           <RouteWrapper>
-            <PrivacyPolicyPage />
-          </RouteWrapper>
-        ),
-      },
-      {
-        path: "/terms-of-use",
-        element: (
-          <RouteWrapper>
-            <TermsOfUsePage />
+            <PollPage />
           </RouteWrapper>
         ),
       },

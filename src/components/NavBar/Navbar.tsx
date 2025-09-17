@@ -1,4 +1,3 @@
-"use client";
 import { FC, MouseEvent, useState } from "react";
 import {
   AppBar,
@@ -18,17 +17,15 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { navbarPages, settings } from "@/components/NavBar/Navbar.logic";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+
 import List from "@mui/material/List";
+import {navbarPages, settings} from "./Navbar.logic";
+import {Link, useNavigate} from "react-router";
 
 export const Navbar: FC = () => {
-  const router = useRouter();
-
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-
+    const navigate = useNavigate();
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -89,7 +86,7 @@ export const Navbar: FC = () => {
                   <ListItem key={index}>
                     <ListItemButton
                       onClick={() => {
-                        router.push(path);
+                          navigate(path);
                         handleCloseNavMenu();
                       }}
                     >
@@ -121,7 +118,7 @@ export const Navbar: FC = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {navbarPages.map(({ label, path }, index) => (
-              <Link key={index} href={path}>
+              <Link key={index} to={path}>
                 {label}
               </Link>
             ))}
@@ -152,7 +149,7 @@ export const Navbar: FC = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting, index) => (
-                <MenuItem key={index} onClick={() => router.push(setting.path)}>
+                <MenuItem key={index} onClick={() => navigate(setting.path)}>
                   <Typography sx={{ textAlign: "center" }}>
                     {setting.label}
                   </Typography>

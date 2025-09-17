@@ -1,4 +1,3 @@
-import { INavBarPage } from "@/components/NavBar/type";
 import {
   BallotIcon,
   Diversity1Icon,
@@ -8,6 +7,7 @@ import {
   QuestionAnswerIcon,
   WorkIcon,
 } from "./index";
+import {INavBarPage} from "./type.ts";
 
 export const settings: Array<INavBarPage> = [
   {

@@ -1,12 +1,13 @@
 import { Navigate, useLocation } from "react-router";
 import { useAuth } from "../context/AuthContext";
-import AuthLayout from "../components/layout/AuthLayout";
+import AuthLayout from "../layout/AuthLayout.tsx";
+import {FC, ReactNode} from "react";
 
 interface PrivatePageWrapperProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const PrivatePageWrapper: React.FC<PrivatePageWrapperProps> = ({
+const PrivatePageWrapper: FC<PrivatePageWrapperProps> = ({
   children,
 }) => {
   const { isAuthenticated } = useAuth(); // Your auth logic here
