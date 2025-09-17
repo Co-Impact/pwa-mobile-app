@@ -1,7 +1,6 @@
-"use client";
-import { FC, useState } from "react";
-import { Avatar, AvatarGroup, Box, IconButton } from "@mui/material";
-import { UserCardModal } from "@/components/Modal/UserCardModal";
+import {FC, useState} from "react";
+import {Avatar, AvatarGroup, Box, IconButton} from "@mui/material";
+import {UserCardModal} from "../Modal/UserCardModal.tsx";
 
 interface MembersCardProps {
   members: Array<{ id: string; image: string; name: string; position: string }>;
