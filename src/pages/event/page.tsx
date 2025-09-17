@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Box, Container, Typography } from "@mui/material";
-import { eventsItems } from "@/data/events";
-import { EventTicket } from "@/components/Card/EventCard";
+import {eventsItems} from "../../data/events.ts";
+import {EventTicket} from "../../components/Card/EventCard.tsx";
+
 
 const Event: FC = () => {
   return (
