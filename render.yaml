@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pwa-app
+    env: node
+    plan: free
+    rootDir: apps/server
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:dev
+    envVars:
+        - fromGroup: Mashback-App
+
