@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useState, type ReactNode, useMemo, useEffect } from 'react';
-import type { User } from '../apis/types';
-import { useNavigate, useLocation } from 'react-router';
-import { CircularProgress, Stack } from '@mui/material';
+import React, {createContext, type ReactNode, useContext, useEffect, useMemo, useState} from 'react';
+import {useLocation, useNavigate} from 'react-router';
+import {CircularProgress, Stack} from '@mui/material';
+import {User} from "../api/types.ts";
 
 // Define the shape of the context
 interface AuthContextType {
