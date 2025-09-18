@@ -1,6 +1,7 @@
-import { Box, Container } from "@mui/material";
-import { FC } from "react";
-import { MemberItem } from "@/components/member/Member";
+import {Box, Container} from "@mui/material";
+import {FC} from "react";
+import {MemberItem} from "../../components/member/Member.tsx";
+
 
 const MembersPage: FC = () => {
   const data = [

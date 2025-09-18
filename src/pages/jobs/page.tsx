@@ -1,7 +1,9 @@
-import { Box, Container } from "@mui/material";
-import { JobCard } from "@/components/Card/JobCard";
-import { FC } from "react";
-import { SummaryCard } from "@/components/Card/SummaryCard";
+import {Box, Container} from "@mui/material";
+
+import {FC} from "react";
+import {JobCard} from "../../components/Card/JobCard.tsx";
+import {SummaryCard} from "../../components/Card/SummaryCard.tsx";
+
 
 const JobsPage: FC = () => {
   const jobContent = [

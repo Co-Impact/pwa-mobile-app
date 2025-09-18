@@ -1,15 +1,7 @@
-import { FC } from "react";
-import {
-  Avatar,
-  Box,
-  Card,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import { listItemContent } from "@/app/profile/profile.logic";
+import {FC} from "react";
+import {Avatar, Box, Card, List, ListItemButton, ListItemIcon, ListItemText, Typography,} from "@mui/material";
+import {listItemContent} from "./profile.logic.ts";
+
 
 const ProfilePage: FC = () => {
   const data = {

@@ -1,10 +1,12 @@
-import { FC } from "react";
-import { Avatar, Box, Card, Chip, Container, Typography } from "@mui/material";
-import { group } from "@/data/group";
+import {FC} from "react";
+import {Avatar, Box, Card, Chip, Container, Typography} from "@mui/material";
+
 import Divider from "@mui/material/Divider";
-import { GlobalCardChart } from "@/components/chart/GlobalChart";
+
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
+import {GlobalCardChart} from "../../components/chart/GlobalChart.tsx";
+import {group} from "../../data/group.ts";
 
 const Group: FC = () => {
   return (

@@ -1,12 +1,12 @@
 "use client";
-import { Avatar, Box, Card, Chip, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
+import {Avatar, Box, Card, Chip, Typography} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import HowToVoteIcon from "@mui/icons-material/HowToVote";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
+import {useNavigate} from "react-router";
 
 const PollPage = () => {
-  const router = useRouter();
+    const navigate = useNavigate()
   const pollQuestion = [
     {
       label: "Should college education be free for everyone? Why or why not?",
@@ -39,7 +39,7 @@ const PollPage = () => {
               cursor: "pointer",
             }}
             key={id}
-            onClick={() => router.push(`poll/${id}`)}
+            onClick={() => navigate(`poll/${id}`)}
           >
             <Typography
               sx={{
