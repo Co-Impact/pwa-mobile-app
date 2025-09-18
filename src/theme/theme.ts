@@ -1,5 +1,5 @@
-import { createTheme } from '@mui/material/styles';
-import { blue, deepPurple } from '@mui/material/colors';
+import {createTheme} from '@mui/material/styles';
+import {blue, deepPurple} from '@mui/material/colors';
 
 const primaryColor = {
   main: blue[700],
@@ -30,6 +30,12 @@ export const lightTheme = createTheme({
       disabled: '#9e9e9e',
     },
   },
+    typography: {
+        button: {
+            textTransform: 'none',
+        },
+        fontFamily: `"Cairo", sans-serif`,
+    },
 });
 
 export const darkTheme = createTheme({
