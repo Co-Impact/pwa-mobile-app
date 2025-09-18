@@ -1,7 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
-import type { ITwoFactorParams, TwoFAResponset } from "./types";
-import { usersInstance } from "../api";
-import { toast } from "react-toastify";
+import {useMutation} from "@tanstack/react-query";
+import type {ITwoFactorParams, TwoFAResponset} from "./types";
+import {usersInstance} from "../api";
 
 
 const sendCode = async (data: ITwoFactorParams): Promise<TwoFAResponset> => {
@@ -11,14 +10,6 @@ const sendCode = async (data: ITwoFactorParams): Promise<TwoFAResponset> => {
 export const useSendCode = () => {
   return useMutation({
     mutationFn: (data: ITwoFactorParams) => sendCode(data),
-    onSuccess: (data, variables) => {
-      toast.success('OTP sent successfuly')
-      console.log({ otp: data.secret })
-      alert(`OTP sent to ${variables.value}: ${data?.secret}`);
-    },
-    onError: (error) => {
-      toast.error(`Error sending OTP: ${error.message}`);
-    },
   });
 };
 
@@ -30,11 +21,5 @@ const validateCode = async (data: ITwoFactorParams) => {
 export const useValidateCode = () => {
   return useMutation({
     mutationFn: (data: ITwoFactorParams) => validateCode(data),
-    onSuccess: () => {
-      toast.success('OTP verified successfuly')
-    },
-    onError: (error) => {
-      toast.error(`Error verifing OTP: ${error.message}`);
-    },
   });
 };
