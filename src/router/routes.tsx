@@ -1,10 +1,14 @@
-import { createBrowserRouter } from "react-router";
+import {createBrowserRouter} from "react-router";
 import {
+    AboutPage,
     DiscussionPage,
     EventPage,
-    HomePage, JobsPage,
-    LoginPage, PollPage,
-    ProfilePage, SignupPage,
+    HomePage,
+    JobsPage,
+    LoginPage,
+    PollPage,
+    ProfilePage,
+    SignupPage,
 } from "./pages";
 import RootRoute from "./RootRoute";
 import RouteWrapper from "./RouteWrapper";
@@ -73,11 +77,19 @@ export const router = createBrowserRouter([
       {
         path: "/poll",
         element: (
-          <RouteWrapper>
+          <RouteWrapper isProtected={true}>
             <PollPage />
           </RouteWrapper>
         ),
       },
+        {
+            path: "/about-us",
+            element: (
+                <RouteWrapper>
+                    <AboutPage />
+                </RouteWrapper>
+            ),
+        },
     ],
   },
 ]);

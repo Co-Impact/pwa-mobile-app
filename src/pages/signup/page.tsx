@@ -1,42 +1,293 @@
 "use client";
-import { Box, TextField } from "@mui/material";
-import { FC } from "react";
+import {
+    Box,
+    Button,
+    Container,
+    FormControl,
+    FormHelperText,
+    InputAdornment,
+    InputLabel,
+    MenuItem,
+    OutlinedInput,
+    Select,
+    TextField,
+    Typography
+} from "@mui/material";
+import {FC} from "react";
+import {University} from "./data.ts";
+import {Controller, useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {signupSchema} from "../../schema/signup.ts";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline"
+import {useCreateAccount} from "../../api/authRequest/createAccount.ts";
 
 const RegisterPage: FC = () => {
+    const { handleSubmit, control, trigger, setValue } = useForm({
+        defaultValues: {
+            firstName: "",
+            lastName: "",
+            phoneNumber:"",
+            email: "",
+            university:"",
+            studyField:"",
+            password: "",
+            company:"",
+            position:"",
+        },
+        resolver: yupResolver(signupSchema),
+    });
+    const { data, error, mutate} = useCreateAccount()
+    const onSubmit = (data: any) => {
+        console.log(data);
+        mutate(data)
+    }
   return (
-    <Box>
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Full Name"
-        name="fullName"
-        onChange={(a) => {
-          console.log(a.target.value);
-        }}
-        required
-      />
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Email"
-        name="Email"
-        onChange={(a) => {
-          console.log(a.target.value);
-        }}
-        required
-      />
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Pssword"
-        name="Pssword"
-        onChange={(a) => {
-          console.log(a.target.value);
-        }}
-        required
-      />
-      <Box>{/*    TODO: thank you Page here*/}</Box>
-    </Box>
+    <Container>
+        <Box>
+            <Typography variant={"h3"}>
+                تسجيل الدخول
+            </Typography>
+            <Typography variant={"body2"}>
+                مشبك تقون بفحص جميع طلبات التسجيل قبل التاكيد من فضلك اترك تفاصيل
+            </Typography>
+        </Box>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <Controller
+                name="firstName"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        size='small'
+                        {...field}
+                        label="First Name"
+                        fullWidth
+                        margin="normal"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+            <Controller
+                name="lastName"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        size='small'
+                        {...field}
+                        label="Last Name"
+                        fullWidth
+                        margin="normal"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+            {/* Phone Number */}
+            <Controller
+                name="phoneNumber"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        {...field}
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        label="Phone Number"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+
+            {/* Company */}
+            <Controller
+                name="company"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        {...field}
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        label="Company"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+
+            {/* Position */}
+            <Controller
+                name="position"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        {...field}
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        label="Position"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+            <Controller
+                control={control}
+                name="email"
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        {...field}
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        label="Email"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+            <Controller
+                name="password"
+                control={control}
+                render={({ field, fieldState: { error } }) => (
+                    <TextField
+                        {...field}
+                        type="password"
+                        fullWidth
+                        size="small"
+                        margin="normal"
+                        label="Password"
+                        required
+                        error={!!error}
+                        helperText={error ? error.message : ""}
+                        InputProps={{
+                            endAdornment: !!error && (
+                                <InputAdornment position="end">
+                                    <ErrorOutlineIcon color="error" />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                )}
+            />
+        <Controller
+            name="university"
+            control={control}
+            rules={{ required: "university is required" }}
+            render={({ field, fieldState: { error } }) => (
+                <FormControl fullWidth margin="normal" error={!!error}>
+                    <InputLabel>Universty</InputLabel>
+                    <Select
+                        size={"small"}
+                        {...field}
+                        input={
+                            <OutlinedInput
+                                label="university"
+                                endAdornment={
+                                    error && (
+                                        <InputAdornment position="end">
+                                            <ErrorOutlineIcon color="error" />
+                                        </InputAdornment>
+                                    )
+                                }
+                            />
+                        }
+                    >
+                        {University.map(({name, code}) => (
+                            <MenuItem key={code} value={code}>
+                                {name}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                    <FormHelperText>{error?.message}</FormHelperText>
+                </FormControl>
+            )}
+        />
+            <Controller
+                name="studyField"
+                control={control}
+                rules={{ required: "studyField is required" }}
+                render={({ field, fieldState: { error } }) => (
+                    <FormControl fullWidth margin="normal" error={!!error}>
+                        <InputLabel>study Field</InputLabel>
+                        <Select
+                            {...field}
+                            size={"small"}
+                            input={
+                                <OutlinedInput
+                                    label="study Field"
+                                    endAdornment={
+                                        error && (
+                                            <InputAdornment position="end">
+                                                <ErrorOutlineIcon color="error" />
+                                            </InputAdornment>
+                                        )
+                                    }
+                                />
+                            }
+                        >
+                            {University.map(({name, code}) => (
+                                <MenuItem key={code} value={code}>
+                                    {name}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                        <FormHelperText>{error?.message}</FormHelperText>
+                    </FormControl>
+                )}
+            />
+            <Button type={"submit"}>submit</Button>
+        </form>
+    </Container>
   );
 };
 

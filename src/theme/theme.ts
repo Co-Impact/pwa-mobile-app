@@ -34,7 +34,7 @@ export const lightTheme = createTheme({
         button: {
             textTransform: 'none',
         },
-        fontFamily: `"Cairo", sans-serif`,
+        fontFamily: `"TheSansArabic", sans-serif`,
     },
 });
 
@@ -53,4 +53,10 @@ export const darkTheme = createTheme({
       disabled: '#777777',
     },
   },
+    typography: {
+        button: {
+            textTransform: 'none',
+        },
+        fontFamily: `"TheSansArabic", sans-serif`,
+    },
 });

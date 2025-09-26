@@ -42,8 +42,8 @@ const LoginPge = () => {
 
     return (
         <Container maxWidth="sm" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Box sx={{ width: {sm:'80%', xs: '100%'}, p: 4, bgcolor: 'background.paper', borderRadius: 2, boxShadow: 3 }}>
-
+            <Box sx={{ width: {sm:'80%', xs: '100%'}, p: 4, bgcolor: 'background.paper', borderRadius: 2, boxShadow: 3, alignItems: 'center', display:"flex", flexDirection:"column" }}>
+                <img src={"./images/profile4.png"} alt={""} width={200} height={200} style={{ display: 'block'}}/>
                 <Typography variant="h5" align="center" gutterBottom>تسجيل الدخول</Typography>
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                     <Controller
@@ -88,9 +88,18 @@ const LoginPge = () => {
                        نسيت كلمة السر
                     </Typography>
                     <Typography variant="body2" align="center">
-                        Dont have an account?{' '}
+                        ليس لديك حساب؟{' '}
                         <Link to="/signup" style={{ color: '#1976d2' }}>انشاء حساب</Link>
                     </Typography>
+                </Box>
+                <Box>
+                    <Typography>
+تريد معرفة لمزيد عن مجنمع مشبك
+                        <Link to={"/about-us"}>اضغط هنا</Link>
+                    </Typography>
+                </Box>
+                <Box>
+                    <img src={"./images/profile1.png"} alt={""} width={100} height={100}/>
                 </Box>
             </Box>
         </Container>
