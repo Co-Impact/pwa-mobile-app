@@ -42,7 +42,7 @@ const RegisterPage: FC = () => {
         mutate(data)
         if (isSuccess)
         {
-
+            setDialog(true)
         }
     }
   return (
