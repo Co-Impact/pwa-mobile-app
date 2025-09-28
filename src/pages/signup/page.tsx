@@ -1,4 +1,3 @@
-"use client";
 import {
     Box,
     Button,
@@ -39,23 +38,44 @@ const RegisterPage: FC = () => {
     });
     const { data, mutate, isSuccess} = useCreateAccount()
     const onSubmit = (data: any) => {
-        mutate(data)
-        if (isSuccess)
-        {
-            setDialog(true)
-        }
+        mutate(data,{
+            onSuccess: () => {
+                setDialog(true)
+            },
+        })
     }
   return (
     <Container>
         {
             dialog? <>
-                <Box>
-                    <Typography variant={"h3"}>
-                       شكراً لتسجيلك في مجتمع مشبك
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minHeight: '80vh', // This makes the box take up most of the viewport height
+                        textAlign: 'center',
+                        padding: 2,
+                    }}
+                >
+                    <Typography variant={"h3"} sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                        شكراً لتسجيلك في مجتمع مشبك
                     </Typography>
-                    <Typography variant={"body2"}>
+                    <Typography variant={"body1"} sx={{ marginTop: 2, color: 'text.secondary' }}>
                         سوف يتم فحص طلبك والتواصل معك في اقرب وقت ممكن
                     </Typography>
+                    <Button
+                        variant="contained"
+                        href="/login"
+                        sx={{
+                            marginTop: 2,
+                            paddingX: 4,
+                            paddingY: 1.5,
+                        }}
+                    >
+                        العودة لصفحة الدخول
+                    </Button>
                 </Box>
             </>:<>
                 <Box>
