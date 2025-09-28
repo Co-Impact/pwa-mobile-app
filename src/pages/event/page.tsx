@@ -1,10 +1,12 @@
-import { FC } from "react";
-import { Box, Container, Typography } from "@mui/material";
+import {FC} from "react";
+import {Box, Container, Typography} from "@mui/material";
 import {eventsItems} from "../../data/events.ts";
 import {EventTicket} from "../../components/Card/EventCard.tsx";
+import {useGetAllEvents} from "../../api/event/getEvents.ts";
 
 
 const Event: FC = () => {
+    const {data, isPending} = useGetAllEvents()
   return (
     <Container>
       <Box>

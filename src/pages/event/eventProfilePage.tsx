@@ -1,20 +1,15 @@
-import { FC } from "react";
-import {
-  Avatar,
-  Box,
-  Button,
-  Card,
-  Chip,
-  Container,
-  Typography,
-} from "@mui/material";
+import {FC} from "react";
+import {Avatar, Box, Button, Card, Chip, Container, Typography,} from "@mui/material";
 import EventIcon from "@mui/icons-material/Event";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PersonIcon from "@mui/icons-material/Person";
 import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
+import {useGetEventById} from "../../api/event/getEvents.ts";
 
 const EventPage: FC = () => {
+
+    const {isPending} = useGetEventById("sdf")
   const data = {
     id: "1",
     name: "Event Name",
