@@ -35,7 +35,7 @@ const JobsPage: FC = () => {
     },
   ];
   return (
-    <Container className={"page"}>
+    <Container>
       <SummaryCard title={"sdfasd"} chartData={45} subtitle={"sdfasdf"} />
       <Box>
         {jobContent.map(({ id, logo, positionName, companyName }, index) => (

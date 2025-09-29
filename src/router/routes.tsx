@@ -3,9 +3,15 @@ import {
     AboutPage,
     DiscussionPage,
     EventPage,
+    EventProfilePage,
+    GroupPage,
+    GroupProfilePage,
     HomePage,
+    JobProfilePage,
     JobsPage,
     LoginPage,
+    MemberProfilePage,
+    MembersPage,
     PollPage,
     ProfilePage,
     SignupPage,
@@ -33,6 +39,12 @@ export const router = createBrowserRouter([
             <EventPage />
           </RouteWrapper>
         ),
+          children:[
+              {
+                  path: ":id",
+                  element: <EventProfilePage />,
+              }
+          ]
       },
       {
         path: "discussion",
@@ -42,6 +54,38 @@ export const router = createBrowserRouter([
           </RouteWrapper>
         ),
       },
+        {
+            path: "members",
+            children:[{
+                index: true,
+                element: (
+                    <RouteWrapper isProtected={true}>
+                        <MembersPage />
+                    </RouteWrapper>
+                ),
+            },
+                {
+                    path: ":id",
+                    element: <MemberProfilePage />,
+                }
+            ]
+        },
+        {
+            path: "group",
+            children:[{
+                index: true,
+                element: (
+                    <RouteWrapper isProtected={true}>
+                        <GroupPage />
+                    </RouteWrapper>
+                ),
+            },
+                {
+                    path: ":id",
+                    element: <GroupProfilePage />,
+                }
+            ]
+        },
       {
         path: "profile",
         element: (
@@ -52,11 +96,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "jobs",
-        element: (
-          <RouteWrapper isProtected={true}>
-            <JobsPage />
-          </RouteWrapper>
-        ),
+          children:[{
+            index: true,
+              element: (
+                  <RouteWrapper isProtected={true}>
+                      <JobsPage />
+                  </RouteWrapper>
+              ),
+          },
+              {
+                  path: ":id",
+                  element: <JobProfilePage />,
+              }
+          ]
       },
       {
         path: "/login",

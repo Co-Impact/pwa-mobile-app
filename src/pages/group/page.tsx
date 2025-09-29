@@ -1,17 +1,12 @@
 import {FC} from "react";
 import {Avatar, Box, Card, Chip, Container, Typography} from "@mui/material";
-
 import Divider from "@mui/material/Divider";
-
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import {GlobalCardChart} from "../../components/chart/GlobalChart.tsx";
 import {group} from "../../data/group.ts";
 
 const Group: FC = () => {
   return (
     <Container>
-      <GlobalCardChart title={"Group"} icon={<Diversity3Icon />} value={345} />
       {group.map(({ name, members }, index) => (
         <Card
           sx={{

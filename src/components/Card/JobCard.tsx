@@ -21,8 +21,6 @@ export const JobCard: FC<Props> = ({ id, logo, positionName, companyName }) => {
         padding: 1,
         gap: 1,
       }}
-      component={Link}
-      to={`/jobs/${id}`}
     >
       <Box sx={{ display: "flex", flexDirection: "row" }}>
         <Avatar src={logo} />
