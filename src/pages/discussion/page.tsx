@@ -12,9 +12,13 @@ import {
 import EventIcon from "@mui/icons-material/Event";
 import Divider from "@mui/material/Divider";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import {useGetAllDiscussions} from "../../api/discussion/getDiscussion.ts";
+import {FC} from "react";
 
-const discussionPage = () => {
-  const data = [
+const DiscussionPage:FC = () => {
+    const {data} = useGetAllDiscussions()
+    console.log(data)
+  const fakeData = [
     {
       id: 1,
       date: "2025-04-29",
@@ -97,7 +101,7 @@ const discussionPage = () => {
             },
           }}
         >
-          {data.map(({ question, date, totalAnswers, id }, index) => (
+          {fakeData.map(({ question, date, totalAnswers, id }, index) => (
             <TimelineItem key={index}>
               <TimelineSeparator>
                 <TimelineDot />
@@ -149,4 +153,4 @@ const discussionPage = () => {
   );
 };
 
-export default discussionPage;
+export default DiscussionPage;

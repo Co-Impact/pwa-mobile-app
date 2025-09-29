@@ -6,11 +6,13 @@ import PersonIcon from "@mui/icons-material/Person";
 import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
 import {useGetEventById} from "../../api/event/getEvents.ts";
+import {useParams} from "react-router";
 
 const EventPage: FC = () => {
-
-    const {isPending} = useGetEventById("sdf")
-  const data = {
+    const { id = "" } = useParams();
+    const {data} = useGetEventById(id)
+    console.log(data)
+  const fakeData = {
     id: "1",
     name: "Event Name",
     image:
@@ -19,7 +21,7 @@ const EventPage: FC = () => {
     location: "Location Name",
     subscription: 100,
   };
-  const { name, image, date, location, subscription } = data;
+  const { name, image, date, location, subscription } = fakeData;
   return (
     <Container sx={{ gap: 2, display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>

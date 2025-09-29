@@ -7,6 +7,7 @@ import {useGetAllEvents} from "../../api/event/getEvents.ts";
 
 const Event: FC = () => {
     const {data, isPending} = useGetAllEvents()
+    console.log(data)
   return (
     <Container>
       <Box>

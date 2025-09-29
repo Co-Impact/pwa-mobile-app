@@ -1,18 +1,16 @@
-import { FC } from "react";
-import { Box, Card, Typography } from "@mui/material";
+import {FC} from "react";
+import {Box, Card, Typography} from "@mui/material";
 
 interface Props {
-  chartData: number;
   title: string;
   subtitle: string;
 }
 export const SummaryCard: FC<Props> = ({ title, subtitle }) => {
   return (
-    <Card>
-      <Box sx={{ width: "30px", height: "30px" }}>chart</Box>
+    <Card sx={{gap:2, padding:2, margin:"10px 0px"}}>
+      <Typography variant={"h5"}>{title}</Typography>
       <Box>
-        <Typography>{title}</Typography>
-        <Box>{subtitle}</Box>
+        <Typography >{subtitle}</Typography>
       </Box>
     </Card>
   );

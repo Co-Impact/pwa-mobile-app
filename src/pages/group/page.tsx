@@ -3,8 +3,11 @@ import {Avatar, Box, Card, Chip, Container, Typography} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import {group} from "../../data/group.ts";
+import {useGetAllTeams} from "../../api/groups/getRequest.ts";
 
 const Group: FC = () => {
+    const {data, isLoading} = useGetAllTeams()
+    console.log(data)
   return (
     <Container>
       {group.map(({ name, members }, index) => (

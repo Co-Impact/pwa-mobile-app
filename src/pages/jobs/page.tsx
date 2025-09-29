@@ -7,7 +7,8 @@ import {useGetAllJobs} from "../../api/job/getJobs.ts";
 
 
 const JobsPage: FC = () => {
-    const { data, isSuccess } = useGetAllJobs()
+    const { data } = useGetAllJobs()
+    console.log(data)
   const jobContent = [
     {
       id: "asfasdfasd",
@@ -36,7 +37,7 @@ const JobsPage: FC = () => {
   ];
   return (
     <Container>
-      <SummaryCard title={"sdfasd"} chartData={45} subtitle={"sdfasdf"} />
+      <SummaryCard title={"sdfasd"} subtitle={"sdfasdf"} />
       <Box>
         {jobContent.map(({ id, logo, positionName, companyName }, index) => (
           <JobCard

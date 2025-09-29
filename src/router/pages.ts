@@ -15,3 +15,4 @@ export const MemberProfilePage = lazy(()=> import("../pages/members/memberProfil
 export const JobProfilePage = lazy(()=> import("../pages/jobs/jobProfilePage.tsx"))
 export const GroupPage = lazy(()=> import("../pages/group/page.tsx"));
 export const GroupProfilePage = lazy(()=> import("../pages/group/groupProfilePage.tsx"))
+export const DiscussionProfilePage = lazy(()=>import('../pages/discussion/discussionProfilePage.tsx'))

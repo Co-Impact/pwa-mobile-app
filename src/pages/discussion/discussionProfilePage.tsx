@@ -1,16 +1,14 @@
-import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  TimelineSeparator,
-} from "@mui/lab";
-import { Card, CardContent, Container, Typography } from "@mui/material";
-import { FC } from "react";
+import {Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator,} from "@mui/lab";
+import {Card, CardContent, Container, Typography} from "@mui/material";
+import {FC} from "react";
+import {useGetDiscussionById} from "../../api/discussion/getDiscussion.ts";
+import {useParams} from "react-router";
 
 const DiscussionTimeline: FC = () => {
-  const data = {
+    const { id = "" } = useParams();
+    const { data } = useGetDiscussionById(id)
+    console.log(data)
+  const fakeData = {
     discussion:
       "How can students best balance academic responsibilities with personal growth?",
     events: [
@@ -21,7 +19,7 @@ const DiscussionTimeline: FC = () => {
       { date: "2023-10-05", label: "Event 5", userid: "User 5" },
     ],
   };
-  const { discussion, events } = data;
+  const { discussion, events } = fakeData;
   return (
     <Container>
       <Card

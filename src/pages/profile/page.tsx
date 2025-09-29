@@ -1,6 +1,7 @@
 import {FC} from "react";
-import {Avatar, Box, Card, List, ListItemButton, ListItemIcon, ListItemText, Typography,} from "@mui/material";
+import {Avatar, Box, Container, List, ListItemButton, ListItemIcon, ListItemText, Typography,} from "@mui/material";
 import {listItemContent} from "./profile.logic.ts";
+import {SummaryCard} from "../../components/Card/SummaryCard.tsx";
 
 
 const ProfilePage: FC = () => {
@@ -20,7 +21,7 @@ const ProfilePage: FC = () => {
   };
   const { name, company, role, image, education, bio } = data;
   return (
-    <Box>
+    <Container>
       <Box
         sx={{
           display: "flex",
@@ -38,9 +39,9 @@ const ProfilePage: FC = () => {
         </Box>
       </Box>
 
-      <Card>{education}</Card>
+      <SummaryCard title={education} subtitle={"asdf asdf asdf asdf asdf "}/>
 
-      <Card>{bio}</Card>
+      <SummaryCard title={bio} subtitle={"asdf asdf asdf asdf asdf "}/>
 
       <List>
         {listItemContent.map((item, index) => (
@@ -50,7 +51,7 @@ const ProfilePage: FC = () => {
           </ListItemButton>
         ))}
       </List>
-    </Box>
+    </Container>
   );
 };
 

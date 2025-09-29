@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router";
 import {
     AboutPage,
     DiscussionPage,
+    DiscussionProfilePage,
     EventPage,
     EventProfilePage,
     GroupPage,
@@ -48,11 +49,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "discussion",
-        element: (
-          <RouteWrapper isProtected={true}>
-            <DiscussionPage />
-          </RouteWrapper>
-        ),
+          children:[
+              {
+                  index: true,
+                  element: (
+                      <RouteWrapper isProtected={true}>
+                          <DiscussionPage />
+                      </RouteWrapper>
+                  ),
+              },
+              {
+                  path:":id",
+                  element: <DiscussionProfilePage/>
+              }
+          ]
       },
         {
             path: "members",
