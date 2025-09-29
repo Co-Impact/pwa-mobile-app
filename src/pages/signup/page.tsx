@@ -36,7 +36,7 @@ const RegisterPage: FC = () => {
         },
         resolver: yupResolver(signupSchema),
     });
-    const { data, mutate, isSuccess} = useCreateAccount()
+    const { mutate } = useCreateAccount()
     const onSubmit = (data: any) => {
         mutate(data,{
             onSuccess: () => {

@@ -10,9 +10,9 @@ const getJobByID = async (id: string) => {
 };
 
 export const useGetJobById =  (id: string) => {
-    return useQuery({queryKey:['event', id], queryFn: ()=>getJobByID(id)})
+    return useQuery({queryKey:['jobs', id], queryFn: ()=>getJobByID(id)})
 }
 
 export const useGetAllJobs =  () => {
-    return useQuery({queryKey:['event'], queryFn: ()=>getAllJobs()})
+    return useQuery({queryKey:['jobs'], queryFn: ()=>getAllJobs()})
 }
