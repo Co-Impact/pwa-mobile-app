@@ -1,8 +1,7 @@
 import {FC, ReactNode} from "react";
-import {Badge, Box, Card, SvgIconTypeMap} from "@mui/material";
+import {Box, Card, CardContent, SvgIconTypeMap} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import CampaignIcon from "@mui/icons-material/Campaign";
 import {OverridableComponent} from "@mui/material/OverridableComponent";
 import {Link} from "react-router";
 
@@ -26,6 +25,7 @@ export const HomeCard: FC<Props> = ({ label, Icon, path, children }) => {
         margin: "10px",
       }}
     >
+        <CardContent>
       <Box
         sx={{
           display: "flex",
@@ -34,14 +34,16 @@ export const HomeCard: FC<Props> = ({ label, Icon, path, children }) => {
           paddingBottom: "5px",
         }}
       >
+
         <Box>
           <Icon />
         </Box>
-        <h4>{label}</h4>
-        <Badge badgeContent={4} color="primary">
-          <CampaignIcon color="action" />
-        </Badge>
+        <>{label}</>
+        {/*<Badge badgeContent={4} color="primary">*/}
+        {/*  <CampaignIcon color="action" />*/}
+        {/*</Badge>*/}
       </Box>
+        </CardContent>
       <Divider sx={{ margin: "2px 0" }} />
       <Box>{children}</Box>
       <Divider sx={{ margin: "4px 0" }} />

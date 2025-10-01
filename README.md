@@ -7,7 +7,15 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Mashback Color Palette
+
+Here are the main brand colors used in the project:
+
+| Color     | Hex Code  | Preview                                                                             |
+|-----------|-----------|-------------------------------------------------------------------------------------|
+| Primary   | `#0A476D` | <div style="width:60px; height:25px; background:#0A476D; border-radius:4px;"></div> |
+| Secondary | `#78BF98` | <div style="width:60px; height:25px; background:#78BF98; border-radius:4px;"></div> |
+| Accent    | `#5B4B43` | <div style="width:60px; height:25px; background:#5B4B43; border-radius:4px;"></div> |
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 

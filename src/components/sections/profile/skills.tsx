@@ -5,7 +5,7 @@ interface Props {
     skills: string[];
 }
 export const SkillsSection:FC<Props> = ({ skills }) => {
-    const ACCENT_COLOR = '#008080';
+    const ACCENT_COLOR = '#0A476D';
     return (
         <Card sx={{borderRadius: 3, mb: 3, boxShadow: 1, bgcolor: 'white'}}>
             <CardContent>
