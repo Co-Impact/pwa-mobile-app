@@ -1,6 +1,7 @@
-import type { FC } from 'react';
-import { Box } from '@mui/material';
+import type {FC} from 'react';
+import {Box} from '@mui/material';
 import {Navbar} from "../components/NavBar/Navbar.tsx";
+import LabelBottomNavigation from "../components/ButtomNavigation/ButtonNavigation.tsx";
 
 
 interface AuthLayoutProps {
@@ -14,6 +15,7 @@ const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
                 <Box mt='92px' width={'100%'}>
                     {children}
                 </Box>
+            <LabelBottomNavigation/>
         </Box>
     );
 };

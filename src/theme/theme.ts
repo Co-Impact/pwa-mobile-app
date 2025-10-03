@@ -16,6 +16,7 @@ const secondaryColor = {
 };
 
 export const lightTheme = createTheme({
+    direction: 'rtl',
   palette: {
     mode: 'light',
     primary: primaryColor,
@@ -39,6 +40,7 @@ export const lightTheme = createTheme({
 });
 
 export const darkTheme = createTheme({
+    direction: 'rtl',
   palette: {
     mode: 'dark',
     primary: primaryColor,

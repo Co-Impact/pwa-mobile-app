@@ -1,14 +1,6 @@
-// src/theme/ThemeProvider.tsx
-import React, {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-  type ReactNode,
-} from 'react';
-import { ThemeProvider as MUIThemeProvider, CssBaseline } from '@mui/material';
-import { lightTheme, darkTheme } from './theme';
+import React, {createContext, type ReactNode, useContext, useEffect, useMemo, useState,} from 'react';
+import {CssBaseline, ThemeProvider as MUIThemeProvider} from '@mui/material';
+import {darkTheme, lightTheme} from './theme';
 
 type ThemeMode = 'light' | 'dark';
 
@@ -59,7 +51,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     <ThemeContext.Provider value={{ toggleTheme, mode }}>
       <MUIThemeProvider theme={theme}>
         <CssBaseline />
-        {children}
+          {children}
       </MUIThemeProvider>
     </ThemeContext.Provider>
   );
